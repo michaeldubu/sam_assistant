@@ -5,6 +5,14 @@ import logging
 import os
 from typing import Dict, Optional
 
+# Import all required system components
+from config.system_config import ConfigManager
+from core.system.main import CoreSystem
+from business.monitoring.system_monitor import SystemMonitor
+from emergency.backup_system import EmergencyBackup
+from remote.access_manager import RemoteAccessManager
+from database.manager import DatabaseManager
+
 class SystemStartup:
     def __init__(self):
         # Create necessary directories first
@@ -22,7 +30,15 @@ class SystemStartup:
             'models',
             'cache',
             'backup',
-            'temp'
+            'temp',
+            'core/system',
+            'core/voice',
+            'core/visualization',
+            'business/monitoring',
+            'business/analytics',
+            'remote',
+            'emergency',
+            'database'
         ]
         
         for directory in directories:
@@ -41,7 +57,7 @@ class SystemStartup:
             ]
         )
         return logging.getLogger('SAM')
-        
+
     async def start(self):
         """Start all systems"""
         try:
