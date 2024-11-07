@@ -1,0 +1,17 @@
+torch
+torchvision
+torchaudio
+transformers
+customtkinter
+pillow
+moderngl
+dash
+plotly
+psutil
+PyGithub
+websockets
+pyyaml
+numpy
+pandas
+flask
+python-dotenv
